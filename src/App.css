@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+/* App.css */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+
+.todo-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-item.completed {
+  background-color: #d4edda;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item .delete-btn {
+  color: #dc3545;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.todo-item .delete-btn:hover {
+  text-decoration: underline;
+}
+
+.todo-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 100px;
+}
+
+.todo-form input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.todo-form input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.todo-form button {
+  background-color: #ffcc00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Menggunakan sudut melengkung dengan nilai radius 20px */
+  cursor: pointer;
+  transition: background-color 0.9s ease;
+}
+
+.todo-form button:hover {
+  background-color: #ff9900;
+}
+
+.todo-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.todo-form button:disabled:hover {
+  background-color: #ccc;
+}
+
+.button {
+  background-color: transparent;
   color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.button:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.8) 0%,
+    rgba(255, 165, 0, 0.8) 15%,
+    rgba(255, 255, 0, 0.8) 30%,
+    rgba(0, 128, 0, 0.8) 45%,
+    rgba(0, 0, 255, 0.8) 60%,
+    rgba(75, 0, 130, 0.8) 75%,
+    rgba(238, 130, 238, 0.8) 90%,
+    rgba(255, 0, 0, 0.8) 100%
+  );
+  background-size: 300% 300%;
+  transition: transform 3s linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button:hover:before {
+  transform: translate(50%, 50%);
+}
+
+.button:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
 }
