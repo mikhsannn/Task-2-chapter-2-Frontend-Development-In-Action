@@ -15,6 +15,19 @@
   margin-bottom: 10px;
   background-color: #f8f9fa;
   border-radius: 5px;
+  animation: fadeBackground 3s infinite alternate; /* Tambahkan animasi pada latar belakang */
+}
+
+@keyframes fadeBackground {
+  0% {
+    background-color: #f8f9fa;
+  }
+  50% {
+    background-color: #d4edda;
+  }
+  100% {
+    background-color: #f8f9fa;
+  }
 }
 
 .todo-item.completed {
@@ -61,7 +74,7 @@
   color: #ffffff;
   padding: 10px 20px;
   border: none;
-  border-radius: 20px; /* Menggunakan sudut melengkung dengan nilai radius 20px */
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.9s ease;
 }
